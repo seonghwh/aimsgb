@@ -51,13 +51,13 @@ def write_cel(filename, system_name, lattice_vectors, symbols, coords):
             lattice_vectors[0][0], lattice_vectors[1][1], lattice_vectors[2][2]))
         for symbol, coord in zip(symbols, coords):
             f.write('{} {:.6f} {:.6f} {:.6f} 1.000000 0.005100 0.000000 0.000000 0.000000\n'.format(
-                symbol, coord[0] / lattice_vectors[0][0], coord[1] / lattice_vectors[1][1], coord[2] / lattice_vectors[2][2]))
+                symbol, coord[0], coord[1], coord[2]))
         f.write('*\n')
 
 
 if __name__ == "__main__":
     poscar_file = 'BTO_POSCAR_test'
-    cel_file = 'output.cel'
+    cel_file = 'output2.cel'
 
     system_name, lattice_vectors, symbols, coords = read_poscar(poscar_file)
     write_cel(cel_file, system_name, lattice_vectors, symbols, coords)
