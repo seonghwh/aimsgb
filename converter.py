@@ -56,8 +56,8 @@ def write_cel(filename, system_name, lattice_vectors, symbols, coords):
 
 
 if __name__ == "__main__":
-    poscar_file = 'BTO_POSCAR_test'
-    cel_file = 'output3.cel'
+    poscar_file = 'BTO_[110]9[-11-4]_POSCAR'
+    cel_file = 'BTO_[110]9[-11-4].cel'
 
     system_name, lattice_vectors, symbols, coords = read_poscar(poscar_file)
     write_cel(cel_file, system_name, lattice_vectors, symbols, coords)
