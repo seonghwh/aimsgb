@@ -48,7 +48,7 @@ def write_cel(filename, system_name, lattice_vectors, symbols, coords):
     with open(filename, 'w') as f:
         f.write('Comment string\n')
         f.write('0 {:.4f} {:.4f} {:.4f} 90.0000 90.0000 90.0000\n'.format(
-            lattice_vectors[0][0], lattice_vectors[1][1], lattice_vectors[2][2]))
+            lattice_vectors[0][0]/10, lattice_vectors[1][1]/10, lattice_vectors[2][2]/10))
         for symbol, coord in zip(symbols, coords):
             f.write('{} {:.6f} {:.6f} {:.6f} 1.000000 0.005100 0.000000 0.000000 0.000000\n'.format(
                 symbol, coord[0], coord[1], coord[2]))
@@ -57,7 +57,7 @@ def write_cel(filename, system_name, lattice_vectors, symbols, coords):
 
 if __name__ == "__main__":
     poscar_file = 'BTO_POSCAR_test'
-    cel_file = 'output2.cel'
+    cel_file = 'output3.cel'
 
     system_name, lattice_vectors, symbols, coords = read_poscar(poscar_file)
     write_cel(cel_file, system_name, lattice_vectors, symbols, coords)
