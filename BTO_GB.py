@@ -59,10 +59,10 @@ def write_cel(filename, system_name, lattice_vectors, symbols, coords):
 if __name__ == "__main__":
     s_input = Grain.from_mp_id("mp-2998")
 
-    gb = GrainBoundary([1, 1, 0], 17, [3, -3, -4], s_input, uc_a=3, uc_b=3)
+    gb = GrainBoundary([0, 0, 1], 13, [2, 3, 0], s_input, uc_a=2, uc_b=2)
     structure = Grain.stack_grains(gb.grain_a, gb.grain_b, direction=gb.direction)
 
-    filename="BTO_[110]17[3-3-4]_POSCAR"
+    filename="BTO_[001]13[230]_POSCAR"
     structure.to(filename=filename)
 
     poscar_file = filename
